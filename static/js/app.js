@@ -67,7 +67,6 @@ function bar(selectedValue) {
         marker: {
                 color: "blue"
             },
-     
       }];
       
       Plotly.newPlot("bar", trace);
@@ -90,7 +89,7 @@ function bubble(selectedValue) {
             marker: {
                 size: obj.sample_values,
                 color: obj.otu_ids,
-                colorscale: "Sunset"
+                colorscale: "YlGnBu"
             }
         }];
   
@@ -98,7 +97,6 @@ function bubble(selectedValue) {
             xaxis: {title: "OTU ID"}
         };
     
-     
         Plotly.newPlot("bubble", trace, layout);
     });
 }
@@ -116,7 +114,7 @@ function gauge(selectedValue) {
         let trace = [{
             domain: { x: [0, 10], y: [0, 10] },
             value: obj.wfreq,
-            title: { text: "<b>Belly Button Washing Frequency</b><br>Scrubs per Week", font: {size: 24}},
+            title: { text: "<b>Belly Button Washing Frequency</b><br>Scrubs per Week", font: {size: 20}},
             type: "indicator", 
             mode: "gauge+number+delta",
             gauge: {
@@ -132,12 +130,10 @@ function gauge(selectedValue) {
                 ]
             }
         }];
-
-        
+       
          Plotly.newPlot("gauge", trace);
     });
 }
-
 
 function optionChanged(selectedValue) {
     demo(selectedValue);
